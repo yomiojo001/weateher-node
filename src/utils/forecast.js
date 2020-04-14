@@ -20,7 +20,7 @@ const forecast = (latitude, longitude, callback) => {
           if(body.message){
             callback("Unable to fetch weather location!!!", undefined);
           }else{
-            callback(undefined, `${body.daily.data[0].summary} It is currently ${body.currently.temperature} degrees out. There is a ${body.currently.precipProbability}% chance of rain.`);
+            callback(undefined, `${body.daily.data[0].summary} It is currently ${body.currently.temperature} degrees out. Temperature change has range from between ${body.daily.data[0].temperatureHigh} degrees to ${body.daily.data[0].temperatureLow} degreess. There is a ${body.daily.data[0].precipProbability}% chance of rain.`);
           }
         }
       })
